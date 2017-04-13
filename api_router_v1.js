@@ -26,8 +26,7 @@ router.get('/topic_collect/:loginname', topicCollectController.list);
 
 // 用户
 router.get('/user/:loginname', userController.show);
-
-
+router.post('/user/create', userController.create);
 
 // accessToken 测试
 router.post('/accesstoken', middleware.auth, toolsController.accesstoken);
