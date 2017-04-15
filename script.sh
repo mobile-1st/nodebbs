@@ -6,13 +6,11 @@
 #
 #docker build -t nodexxx .
 
+docker build -t ihakula/node-bbs -f ./Dockerfile .
+docker tag ihakula/node-bbs ihakula/node-bbs:latest
+docker login --username ihakula --password wayde191
+docker push ihakula/node-bbs:latest
 
 docker stop zm-node || true
 docker rm zm-node || true
-docker build -t ihakula/node-bbs -f ./Dockerfile .
-docker tag ihakula/node-bbs ihakula/node-bbs:latest
 docker run -e VIRTUAL_HOST=bbs.sunzhongmou.com --name zm-node -p 8510:8510 -di ihakula/node-bbs
-
-
-#docker login --username ihakula --password wayde191
-#docker push ihakula/node-bbs:latest
