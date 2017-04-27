@@ -104,3 +104,22 @@ var create = function (req, res, next) {
 };
 
 exports.create = create;
+
+
+var accesstoken = function (req, res, next) {
+    var loginname = req.params.loginname;
+    var ep = new eventproxy();
+
+    ep.fail(next);
+
+    UserProxy.getUserByLoginName(loginname, ep.done(function (user) {
+        if (!user) {
+            res.status(404);
+            return res.send({success: false, error_msg: '用户不存在'});
+        }
+
+        res.send({success: true, data: user.accessToken});
+    }));
+};
+
+exports.accesstoken = accesstoken;
