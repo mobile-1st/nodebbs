@@ -75,11 +75,17 @@ var config = {
 
   admins: { sunzhongmou: true },
 
+  // GITHUB_OAUTH: {
+  //   clientID: '0ab1a89a3e377fd24609',
+  //   clientSecret: 'aafb1b109bb9d702ab6597acdab998f28fc057ce',
+  //   callbackURL: 'https://bbs.sunzhongmou.com/auth/github/callback'
+  // },
   GITHUB_OAUTH: {
-    clientID: '0ab1a89a3e377fd24609',
-    clientSecret: 'aafb1b109bb9d702ab6597acdab998f28fc057ce',
-    callbackURL: 'https://bbs.sunzhongmou.com/auth/github/callback'
+    clientID: '',
+    clientSecret: '',
+    callbackURL: ''
   },
+
   // 是否允许直接注册（否则只能走 github 的方式）
   allow_sign_up: true,
 
