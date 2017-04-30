@@ -236,3 +236,29 @@ exports.update = function (req, res, next) {
   });
 };
 
+var read = function (req, res, next) {
+  var topicId  = String(req.params.id);
+  var ep       = new eventproxy();
+
+  if (!validator.isMongoId(topicId)) {
+    res.status(400);
+    return res.send({success: false, error_msg: '不是有效的话题id'});
+  }
+
+  ep.fail(next);
+
+  TopicProxy.getFullTopic(topicId, ep.done(function (msg, topic, author, replies) {
+    if (!topic) {
+      res.status(404);
+      return res.send({success: false, error_msg: '话题不存在'});
+    }
+
+    topic.visit_count += 1;
+    topic.save();
+
+    res.send({success: true});
+
+  }));
+};
+
+exports.read = read;
