@@ -5,14 +5,13 @@
 var path = require('path');
 
 var config = {
-  // debug 为 true 时，用于本地调试
   debug: false,
 
   get mini_assets() { return !this.debug; }, // 是否启用静态文件的合并压缩，详见视图中的Loader
 
-  name: '畅居', // 社区名字
-  description: '一个解决实际问题的小区社区', // 社区的描述
-  keywords: '畅居, 小区, 物业, 解决问题, 滨湖壹号, 中冶创业苑, 当代国际花园',
+  name: '技术T台', // 社区名字
+  description: '技术T台，一横一竖都很重要，既要技术精专，也要视野开拓。First they ignore you, then they laugh at you, then they fight you and then you win - Mahatma Gandhi', // 社区的描述
+  keywords: 'T台，技术，T型人才，技术精专，技术全面，畅居, 小区, 物业, 解决问题, 滨湖壹号, 中冶创业苑, 当代国际花园',
 
   // 添加到 html head 中的信息
   site_headers: [
@@ -25,6 +24,7 @@ var config = {
     // 格式 [ path, title, [target=''] ]
     [ '/about', '关于' ]
   ],
+
   // cdn host，如 http://cnodejs.qiniudn.com
   site_static_host: '', // 静态文件存储域名
   // 社区的域名
@@ -52,10 +52,10 @@ var config = {
 
   // RSS配置
   rss: {
-    title: '一个解决实际问题的畅居小区社区',
-    link: 'https://bbs.sunzhongmou',
+    title: '技术T台，一横一竖都很重要',
+    link: 'https://bbs.sunzhongmou.com',
     language: 'zh-cn',
-    description: '一个解决实际问题的畅居小区社区',
+    description: 'First they ignore you, then they laugh at you, then they fight you and then you win - Mahatma Gandhi',
     max_rss_items: 50
   },
 
@@ -77,7 +77,7 @@ var config = {
 
   GITHUB_OAUTH: {
     clientID: '0ab1a89a3e377fd24609',
-    clientSecret: 'aafb1b109bb9d702ab6597acdab998f28fc057ce123',
+    clientSecret: 'aafb1b109bb9d702ab6597acdab998f28fc057ce',
     callbackURL: 'https://bbs.sunzhongmou.com/auth/github/callback'
   },
 
@@ -87,17 +87,15 @@ var config = {
   // oneapm 是个用来监控网站性能的服务
   oneapm_key: '',
 
-  // 下面两个配置都是文件上传的配置
-
   // 7牛的access信息，用于文件上传
   qn_access: {
-    accessKey: 'your access key',
-    secretKey: 'your secret key',
-    bucket: 'your bucket name',
-    origin: 'http://your qiniu domain',
+    accessKey: 'JPlCnNEXts1bhD_JFHSfpVhLCdElj8FK99vQoV0L',
+    secretKey: 'cd3tZQYvo8MIzcX6LdmP36xC7Lj7x3QdYJGXtNED',
+    bucket: 'techt',
+    origin: 'https://iovip-z2.qbox.me',
     // 如果vps在国外，请使用 http://up.qiniug.com/ ，这是七牛的国际节点
     // 如果在国内，此项请留空
-    uploadURL: 'http://xxxxxxxx',
+    uploadURL: 'https://up-z2.qbox.me',
   },
 
   // 文件上传配置
@@ -111,6 +109,16 @@ var config = {
 
   // 版块
   tabs: [
+    ['project', '项目'],
+    ['technology', '技术'],
+    ['tool', '工具'],
+    ['platform', '平台'],
+    ['language', '语言'],
+    ['framework', '框架'],
+    ['radar', '雷达'],
+  ],
+
+  eTabs: [
     ['zy', '中冶创业苑'],
     ['bh', '滨湖壹号'],
     ['dd', '当代国际花园'],
@@ -118,6 +126,7 @@ var config = {
     ['ask', '帮帮'],
     ['job', '服务'],
     ['exchange', '置换'],
+    ['l7', '小七班'],
   ],
 
   // 极光推送

@@ -8,8 +8,8 @@
 
 docker build -t ihakula/node-bbs -f ./Dockerfile .
 docker tag ihakula/node-bbs ihakula/node-bbs:latest
-docker login --username ihakula --password wayde191
-docker push ihakula/node-bbs:latest
+#docker login --username ihakula --password wayde191
+#docker push ihakula/node-bbs:latest
 
 docker stop zm-node || true
 docker rm zm-node || true
