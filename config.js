@@ -92,9 +92,7 @@ var config = {
     accessKey: 'JPlCnNEXts1bhD_JFHSfpVhLCdElj8FK99vQoV0L',
     secretKey: 'cd3tZQYvo8MIzcX6LdmP36xC7Lj7x3QdYJGXtNED',
     bucket: 'techt',
-    origin: 'https://iovip-z2.qbox.me',
-    // 如果vps在国外，请使用 http://up.qiniug.com/ ，这是七牛的国际节点
-    // 如果在国内，此项请留空
+    origin: 'http://opzmk10r6.bkt.clouddn.com',
     uploadURL: 'https://up-z2.qbox.me',
   },
 

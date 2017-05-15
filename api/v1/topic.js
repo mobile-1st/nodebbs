@@ -131,6 +131,12 @@ var create = function (req, res, next) {
     return tPair[0];
   });
 
+  var eTabs = config.eTabs.map(function (tPair) {
+    return tPair[0];
+  });
+
+  allTabs = allTabs.concat(eTabs);
+
   // 验证
   var editError;
   if (title === '') {
@@ -188,6 +194,12 @@ exports.update = function (req, res, next) {
   var allTabs = config.tabs.map(function (tPair) {
     return tPair[0];
   });
+
+  var eTabs = config.eTabs.map(function (tPair) {
+    return tPair[0];
+  });
+
+  allTabs = allTabs.concat(eTabs);
 
   TopicProxy.getTopicById(topic_id, function (err, topic, tags) {
     if (!topic) {
